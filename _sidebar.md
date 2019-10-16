@@ -1,7 +1,8 @@
 * 日常笔记
-	* [mac](book/mac.md)
-	* [linux](book/linux.md)
-	* [mysql](book/mysql.md)
+
+	* [Linux](book/linux.md)
+	* [Mysql](book/mysql.md)
+	* [Others](book/others.md)
 
 * 红帽认证
 
