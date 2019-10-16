@@ -1,25 +1,21 @@
-* 入门
+* 日常笔记
+	* [mac](book/mac.md)
+	* [linux](book/linux.md)
+	* [mysql](book/mysql.md)
 
-	* [快速开始](zh-cn/quickstart.md)
-	* [多页文档](zh-cn/more-pages.md)
-	* [定制导航栏](zh-cn/custom-navbar.md)
-	* [封面](zh-cn/cover.md)
+* 红帽认证
 
-* 定制化
+	* [RH124](book/rh124.md)
+	* [RH134](book/rh134.md)
+	* [RH254](book/rh254.md)
 
-	* [配置项](zh-cn/configuration.md)
-	* [主题](zh-cn/themes.md)
-	* [插件列表](zh-cn/plugins.md)
-	* [开发插件](zh-cn/write-a-plugin.md)
-	* [Markdown 配置](zh-cn/markdown.md)
-	* [代码高亮](zh-cn/language-highlight.md)
+* 阿里云认证
 
-* 指南
+	* [ACA](book/aca.md)
+	* [ACP](book/acp.md)
+	* [ACE](book/ace.md)
 
-	* [部署](zh-cn/deploy.md)
-	* [文档助手](zh-cn/helpers.md)
-	* [兼容 Vue](zh-cn/vue.md)
-	* [CDN](zh-cn/cdn.md)
-	* [离线模式(PWA)](zh-cn/pwa.md)
-	* [服务端渲染 (SSR)](zh-cn/ssr.md)
-	* [文件嵌入<sup style="color:red">(new)<sup>](zh-cn/embed-files.md)
+* 读书笔记
+
+	* [活法](book/huofa.md)
+	* [早起魔法](book/zaoqimofa.md)

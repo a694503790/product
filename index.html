@@ -6,44 +6,71 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <link rel="stylesheet" href="/_css/vue.css">
+      <!-- qiumin
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+   <link href="https://cdn.bootcss.com/docsify/4.9.4/themes/vue.css" rel="stylesheet">
+ qiumin  -->
 </head>
 <body>
-  <div id="app"></div>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <nav>
+    <a href="#/">Home</a>
+    <a href="#/standard/secure/">Example</a>
+  </nav>
+  <div id="app">正在加载中</div>
+  <!-- qiumin
+   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>  
+
+  <script src="https://cdn.bootcss.com/docsify/4.9.4/docsify.min.js"></script>
+    qiumin  -->
+    <script src="/_js/docsify.min.js"></script> 
   <script>
   window.$docsify = {
+   //  alias: {
+    //    '/.*/_navbar.md': 'http://t.do1.com.cn/_navbar.md',
+     // },
       el: '',
-      name: '', 
-      repo: '',
-      loadNavbar: true,     //自定义导航栏
-      loadSidebar: true,    //定制侧边栏
-      subMaxLevel: 2,
+     // name: '丘敏——工作笔记', 
+      //onlyCover: true,
+     // logo: '/_media/icon.svg', //定制logo
       auto2top: true,       //切换页面后是否自动跳转到页面顶部
-      coverpage: true,      //定制封面
-     // basePath: 'http://git.do1.com.cn/publicdoc/index/index.html',
+      coverpage: false,      //定制封面
+      loadNavbar: false,     //自定义导航栏
+      loadSidebar: true,    //定制侧边栏
+      mergeNavbar: true,    //小屏设备下合并导航栏到侧边栏
+      executeScript: true,  //执行文档里的 script 标签里的脚本，只执行第一个 script (demo)。 如果 Vue 存在，则自动开启
+      maxLevel: 2,
+      subMaxLevel: 3,
       search: {
         noData: {
-          '/zh-cn/': '没有结果!',
-          '/': 'No results!'
+          '/': '没有结果!'
         },
         paths: 'auto',
         placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Search'
+          '/': '搜索'
         }
     },
+      plugins: [
+                function (hook, vm) {
+                hook.beforeEach(function (html) {
+                                return  html
+                                + '\n\n----\n\n'
+                                + '<a href="http://www.qiumin.top" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">联系方式：694503790@qq.com</a>'
+                                })
+                },
+                ]
   }
   </script>
+     <!-- qiumin
   <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="https://cdn.bootcss.com/docsify/4.9.4/plugins/search.js"></script>
+  <script src="https://cdn.bootcss.com/docsify/4.9.4/plugins/external-script.js"></script>
+    qiumin  -->
+       <!-- qiumin
   <script src="//unpkg.com/docsify-copy-code"></script>
-  <style type="text/css">
-    .app-nav ul li p{
-      font-weight: bold;
-      /* color:#4CAF50;*/
-    }
-  </style>
+       qiumin  -->
+   <script src="/_js/search.js"></script>
+  <script src="/_js/external-script.min.js"></script>
 </body>
 </html>
 
