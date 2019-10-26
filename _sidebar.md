@@ -25,3 +25,4 @@
 	* [活法](book/huofa.md)
 	* [早起魔法](book/zaoqimofa.md)
 	* [人性的弱点](book/renxingderuodian.md)
+	* [OKR工作法](book/okr.md)
