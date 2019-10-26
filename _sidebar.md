@@ -1,22 +1,27 @@
 * 日常笔记
 
-	* [Linux](book/linux.md)
-	* [Mysql](book/mysql.md)
-	* [Others](book/others.md)
+	* [Mysql](mysql/mysql.md)
+	* [Python](python/python.md)
+	* Docker
+		* [基础概念](docker/basic.md)
+		* [安装卸载](docker/installation.md)
+		* [常用命令](docker/command.md)
+		* [Dockerfiles](docker/dockerfile.md)
 
 * 红帽认证
 
-	* [RH124](book/rh124.md)
-	* [RH134](book/rh134.md)
-	* [RH254](book/rh254.md)
+	* [RH124](redhat/rh124.md)
+	* [RH134](redhat/rh134.md)
+	* [RH254](redhat/rh254.md)
 
 * 阿里云认证
 
-	* [ACA](book/aca.md)
-	* [ACP](book/acp.md)
-	* [ACE](book/ace.md)
+	* [ACA](alicloud/aca.md)
+	* [ACP](alicloud/acp.md)
+	* [ACE](alicloud/ace.md)
 
 * 读书笔记
 
 	* [活法](book/huofa.md)
 	* [早起魔法](book/zaoqimofa.md)
+	* [人性的弱点](book/renxingderuodian.md)
