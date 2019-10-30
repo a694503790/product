@@ -31,7 +31,9 @@ RUN export ADMIN_USER="mark" \
     && unset ADMIN_USER
 CMD sh
 ```
-#### pipe
+
+!> `pipe`
+
 ```
 RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
 ```
