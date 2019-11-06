@@ -38,6 +38,21 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 82c270d14891        ubuntu              "bash"              5 seconds ago       Up 4 seconds                            new_container1
 ```
 
+### --restart=always
+!> 即开机自启动
+```
+[root@centos7 ~]# docker update --restart=always 7c369408716f d2f6179c97d9 2e2ceb8f19b3 28192ea1c749 04296bb5d928 395ab7429a51 2697588d9510 92753fceeecf
+7c369408716f
+d2f6179c97d9
+2e2ceb8f19b3
+28192ea1c749
+04296bb5d928
+395ab7429a51
+2697588d9510
+92753fceeecf
+```
+
+
 ### --env , -e
 ```
 [root@centos7 ~]# docker run -d --env qiumin=ls -i -t ubuntu bash
@@ -96,6 +111,12 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  newqiumin2  opt  proc  root  
 root@qiumin:/#
 root@qiumin:/# hostname
 qiumin
+```
+
+### --network
+```
+[root@centos7 ~]# docker run -d -t -i --network my-net -p 6380:6379 redis redis-server
+f8518e1aee43e2cacbc9239e58028e89eb16290ad234421832ef4933c3f6f28d
 ```
 
 ## docker stop
@@ -371,4 +392,49 @@ exit
 A /abc
 C /root
 A /root/.bash_history
+```
+
+## docker logs
+```
+[root@centos7 ~]#  docker logs 4b5eb8aeb6d2 -f
+1:C 29 Oct 2019 07:50:06.096 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 29 Oct 2019 07:50:06.096 # Redis version=5.0.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 29 Oct 2019 07:50:06.096 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+```
+
+## 导入导出镜像
+- docker export/import
+
+!> 比如我们从一个 ubuntu 镜像启动一个容器，然后安装一些软件和进行一些设置后，使用 docker export 保存为一个基础镜像。然后，把这个镜像分发给其他人使用，将其作为基础的开发环境。
+
+```
+[root@centos7 elastic]# docker export 2e2ceb8f19b3 >abc.tar
+[root@centos7 elastic]# docker import - newqiu<abc.tar
+sha256:860dfa86a6c58ef82a293daac985306cba40c97069916ccd8ee6d78abbf969d1
+[root@centos7 elastic]# docker image ls
+REPOSITORY                   TAG                   IMAGE ID            CREATED             SIZE
+newqiu                       latest                860dfa86a6c5        4 seconds ago       597MB
+```
+- docker save/load
+
+!> 如果我们的应用是使用 docker-compose.yml 编排的多个镜像组合，但我们要部署的客户服务器并不能连外网。这时就可以使用 docker save 将用到的镜像打个包，然后拷贝到客户服务器上使用 docker load 载入。
+
+```
+[root@centos7 elastic]# docker image ls
+REPOSITORY                   TAG                   IMAGE ID            CREATED             SIZE
+newqiu                       latest                860dfa86a6c5        41 seconds ago      597MB
+[root@centos7 elastic]# docker save 860dfa86a6c5 > abcd.tar
+[root@centos7 elastic]# docker image rm 860dfa86a6c5
+Untagged: newqiu:latest
+Deleted: sha256:860dfa86a6c58ef82a293daac985306cba40c97069916ccd8ee6d78abbf969d1
+[root@centos7 elastic]# docker load < abcd.tar
+116683e53642: Loading layer [==================================================>]  611.4MB/611.4MB
+Loaded image ID: sha256:860dfa86a6c58ef82a293daac985306cba40c97069916ccd8ee6d78abbf969d1
+[root@centos7 elastic]# docker image ls
+REPOSITORY                   TAG                   IMAGE ID            CREATED             SIZE
+<none>                       <none>                860dfa86a6c5        3 minutes ago       597MB
+[root@centos7 elastic]# docker image tag 860dfa86a6c5 qiu111:222
+[root@centos7 elastic]# docker image ls
+REPOSITORY                   TAG                   IMAGE ID            CREATED             SIZE
+qiu111                       222                   860dfa86a6c5        9 minutes ago       597MB
 ```

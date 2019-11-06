@@ -72,3 +72,17 @@ RUN [ "redis-server" ]
 !> Use WORKDIR to specify that all subsequent actions should be taken from the directory /usr/src/app in your image filesystem (never the host’s filesystem).
 ### ONBUILD
 ?> An ONBUILD command executes after the current Dockerfile build completes
+
+### 例子
+#### 构建elasticsearch
+```
+FROM elasticsearch:6.8.4
+COPY elasticsearch-analysis-ik-6.8.4.zip /root
+RUN echo "y"|/usr/share/elasticsearch/bin/elasticsearch-plugin install file:///root/elasticsearch-analysis-ik-6.8.4.zip
+```
+
+!> 执行`docker build --tag=elastic-qiu .`
+
+```
+docker run -t -i -p 9900:9200 -p 9800:9300 -e "discovery.type=single-node" elastic-qiu
+```
