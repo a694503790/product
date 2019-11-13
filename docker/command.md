@@ -1,3 +1,10 @@
+## docker cp
+```
+[root@centos7 ~]# docker cp /root/sshd.service c1d4b2aa19d3:/data/ddd
+[root@centos7 ~]# docker exec -t -i c1d4b2aa19d3 bash
+root@c1d4b2aa19d3:/data# ls
+ddd
+```
 ## docker pull
 ```
 [root@centos7 docker]# docker pull redis

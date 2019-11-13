@@ -30,7 +30,6 @@
 * 读书笔记
 
 	* [活法](book/huofa.md)
-	* [断舍离](book/duansheli.md)
 	* [早起魔法](book/zaoqimofa.md)
 	* [OKR工作法](book/okr.md)
 	* [王阳明心学](book/xinxue.md)
