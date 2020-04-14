@@ -3,7 +3,7 @@
 
 !> 使用标签`latest`下载的也是`tomcat:8.5.47`
 
-```
+```shell
 [root@centos7 ~]# docker pull tomcat:8.5.47-jdk8-openjdk
 [root@centos7 ~]# docker run -i -t -p 80:8080 tomcat:latest
 Using CATALINA_BASE:   /usr/local/tomcat
